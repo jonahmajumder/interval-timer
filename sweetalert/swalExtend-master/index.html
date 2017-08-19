@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <!-- <meta charset="utf-8"> -->
+
+    <title>swalExtend</title>
+    <link rel="stylesheet" href="/Users/jonahmajumder/Desktop/WebDev/sweetalert/swalExtend-master/swalExtend.css">
+    <link rel="stylesheet" href="/Users/jonahmajumder/Desktop/WebDev/sweetalert/swalExtend-master/swalExtend.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="/Users/jonahmajumder/Desktop/WebDev/sweetalert/swalExtend-master/swalExtend.js"></script>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico|Open+Sans:400,300,700' rel='stylesheet' type='text/css'> -->
+
+</head>
+
+<body>
+    <h1>Sweet Alert.js</h1>
+    <button onclick="showPauseScreen();" >Hey, click me!</button>
+
+    
+    <script>
+        var swalFunction = function () {
+            swal({
+                title: "Workout Paused",
+                text: "What would you like to do?",
+                type: "warning",
+                showCancelButton: false,
+                confirmButtonColor: "red",
+                confirmButtonText: "Go Back",
+                closeOnConfirm: true
+            },
+                function () {
+                    console.log("button 1");
+                });
+        };
+
+        function showPauseScreen() {
+            swalExtend({
+                swalFunction: swalFunction,
+                hasCancelButton: false,
+                buttonNum: 2,
+                buttonColor: ["blue", "green"],
+                buttonNames: ["Restart", "Resume"],
+                clickFunctionList: [
+                    function () {
+                        console.log("button 2");
+                    },
+                    function () {
+                        console.log("button 3");
+                    }
+                ]
+            });
+        };
+
+    </script>
+
+
+</body>
+
+</html>
