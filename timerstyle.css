@@ -235,8 +235,8 @@ body {
     width: 30px;
     height: 25px;
     outline: none;
-    font-size: 14pt;
-    vertical-align: bottom;
+    font-size: 12pt;
+    vertical-align: center;
 
     background-color: white;
     
@@ -252,7 +252,7 @@ select {
 #adder select::-ms-expand { display: none; }
 
 .minField, .secField {
-    font-size: 14pt;
+    font-size: 12pt;
 }
 
 #finalRestCheck {
