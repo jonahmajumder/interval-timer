@@ -435,7 +435,7 @@ function getWorkout() {
             confirmButtonText: "Make Workout"
             },
             function() {
-                window.location.href = "timer.html";
+                window.location.href = "index.html";
             });
     }
     // console.log(rawWorkout);
@@ -700,7 +700,7 @@ function backToAdder() {
         showCancelButton: true, confirmButtonColor: "#DD6B55", confirmButtonText: "Go Back", closeOnConfirm: false
     },
     function (){
-        window.location.href = "timer.html";
+        window.location.href = "index.html";
     });
 }
 
@@ -715,7 +715,7 @@ var swalFunction = function () {
         closeOnConfirm: true
     },
         function () {
-            window.location.href = "timer.html";
+            window.location.href = "index.html";
         });
 };
 

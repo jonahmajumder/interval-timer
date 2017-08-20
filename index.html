@@ -10,11 +10,119 @@
     <link rel="stylesheet" href="sweetalert/dist/sweetalert.css">
     <script src="sweetalert2/dist/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var inp;
+            var timeInputs = document.getElementsByClassName("timeInput");
+            for (var i = 0; i < timeInputs.length; i++) {
+                inp = timeInputs[i];
+                inp.min = 0;
+                inp.max = 59;
+            }
+            timeInputs = document.getElementsByClassName("RestTimeInput");
+            for (var i = 0; i < timeInputs.length; i++) {
+                inp = timeInputs[i];
+                inp.min = 0;
+                inp.max = 59;
+            }
+            assessRest(0);
+            undoAdd();
+            resizeFunction();
+        }
+        window.onresize = debounce(resizeFunction, 10);
+    </script>
 </head>
 <body>
 <div id="bodyContainer" class="section">
-<a href="timer.html">To the timer!</a>
+<!--     <div id="loadPopUp">
+        <div id="popUpContent" ></div>
+    </div> -->
+    <div id="timer">
+        <div id="summaryContainer" class="section">
+            <div class="subsection"><div class="title radioField">Visual Summary</div></div>
+            <div id="summary" class="subsection">
+                <div id="summaryBar"></div>
+                <div id="duration">
+                    <div id="innerDurationDiv" class="radioField">Total Duration:<br>0 minutes, 0 seconds</div>
+                </div>
+                <div id="finalRestBox">
+                    <div id="innerFinalRestBox">
+                    <button id="finalRestCheck" class="radioButton" onclick="assessFinalRest();">Exclude Final Rest Interval</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="adderContainer" class="section">
+            <div class="subsection"><div class="title radioField">Add Interval(s)</div></div>
+                <div id="adder" class="subsection">
+                    <div class="subsubsection"><div>Active Interval:</div></div>
+                    <div class="subsubsection">
+                        <div class="radioField">
+                        <div class="field">Minutes:</div>
+                        <div class="field">
+                            <input id="activeMin" type="number" name="minutes" class="timeInput" value=0>
+                        </div>
+                        </div>
+                        <div class="radioField">
+                        <div class="field">Seconds:</div>
+                        <div class="field">
+                            <input id="activeSec" type="number" name="seconds" class="timeInput" value=0>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="subsubsection"><div>Rest Interval:</div></div>
+                        <div id="restOptions" class="subsubsection">
+                            <button id="equalRest" class="radioButtonSelected" onclick="assessRest(0);">Equal</button>
+                            <button id="customRest" class="radioButton" onclick="assessRest(1);">Custom</button>
+                            <button id="noneRest" class="radioButton" onclick="assessRest(2);">None</button>
+                        </div>
+                        <div class="subsubsection" id="restTime">
+                        <div id="restMinBox" class="disabledField">
+                        <div id="restMinLabel" class="field">Minutes:</div>
+                        <div class="field">
+                            <input id="restMin" type="number" name="minutes" class="restTimeInput" value=0 disabled="true">
+                        </div>
+                        </div>
+                        <div id="restSecBox" class="disabledField">
+                        <div id="restSecLabel" class="field">Seconds:</div>
+                        <div class="field">
+                            <input id="restSec" type="number" name="seconds" class="restTimeInput" value=0 disabled="true">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="subsubsection">
+                        <div class="radioField">
+                            <div class="field">How many intervals?</div>
+                            <div class="field">
+                                <input id="addRepetitions" class="timeInput" value=1 type="number" name="nInt" min=1 style="width: 20px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="adderSubmit" class="subsubsection">
+                        <button id="addButton" type="submit" class="actionButton" onclick="addInterval();">Add! &uarr;</button>
+                        <button id="undoButton" type="submit" class="actionButton" onclick="undoAdd();" disabled="true">Undo &larr;</button>
+                    </div>
+                    </div>
+                    <div class="subsection">
+                        <button id="countdownButton" class="radioButton" onclick="assessCountdown();">Countdown to Start?</button>
+                        <div id="countdownInputBox" class="disabledField">
+                            <input id="countdownSec" value=0 type="number" style="width: 20px;" disabled>
+                            <div id="countdownLabel" class="field">seconds</div>
+                        </div>
+                    </div>
+                    <button class="actionButton" onclick="toTimer();" style="background-color: green;">Start &rarr;</button>
+                </div>
+                <div id="saveStart" class="section">
+                    <div class="subsection">
+                        <button id="workoutSave" class="actionButton" onclick="saveWorkout();" >Save Workout &darr;</button>
+                        <button id="workoutLoad" class="actionButton" onclick="loadWorkout();" >Load Workout &uarr;</button>
+                        <button id="workoutDelete" class="actionButton" onclick="deleteWorkout();" >Delete Workout &larr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
