@@ -132,32 +132,6 @@ body {
     /*border: 1px solid black;*/
 }
 
-#adder {
-    padding: 5px 0;
-}
-
-#activeTimeEntry {
-    padding: 5px 0;
-}
-
-.timeInput {
-    width: 30px;
-    font-size: 10pt;
-}
-
-.restTimeInput {
-    width: 30px;
-    font-size: 10pt;
-}
-
-[type="radio"] {
-    margin: 0 5px 0 0;
-}
-
-[type="number"] {
-    width: 20px;
-}
-
 .radioButton {
     margin: 2px;
     display: inline-block;
@@ -233,6 +207,36 @@ body {
 
 .actionButton:active {
     box-shadow: inset 0 0 15px black;
+}
+
+#adder {
+    padding: 5px 0;
+}
+
+#adderContainer {
+    padding: 10px 0;
+}
+
+#activeTimeEntry {
+    padding: 5px 0;
+}
+
+.timeInput {
+    width: 30px;
+    font-size: 10pt;
+}
+
+.restTimeInput {
+    width: 30px;
+    font-size: 10pt;
+}
+
+[type="radio"] {
+    margin: 0 5px 0 0;
+}
+
+[type="number"] {
+    width: 20px;
 }
 
 #finalRestCheck {
