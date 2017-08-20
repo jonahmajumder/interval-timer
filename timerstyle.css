@@ -68,7 +68,7 @@ body {
     padding: 10px;
     margin: 10px;
     overflow: auto;
-    font-size: 12pt;
+    font-size: 5vw;
 }
 
 .subsection {
@@ -112,10 +112,6 @@ body {
     text-align: center;
 }
 
-/*#innerFinalRestBox {
-    width: 200px;
-}*/
-
 #restCheckLabel {
     margin-left: 6px;
 }
@@ -123,6 +119,25 @@ body {
 .field {
     margin: 0 auto;
     display: inline-block;
+    font-size: 4vw;
+}
+
+.radioField {
+    margin: 2px;
+    display: inline-block;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    /*border: 1px solid black;*/
+}
+
+#adder {
+    padding: 5px 0;
+}
+
+#activeTimeEntry {
+    padding: 5px 0;
 }
 
 .timeInput {
@@ -139,14 +154,8 @@ body {
     margin: 0 5px 0 0;
 }
 
-.radioField {
-    margin: 2px;
-    display: inline-block;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    border-radius: 15px;
-    /*border: 1px solid black;*/
+[type="number"] {
+    width: 20px;
 }
 
 .radioButton {
@@ -199,7 +208,7 @@ body {
 }
 
 .title {
-    font-size: 16pt;
+    font-size: 6vw;
     margin: 2px;
     display: inline-block;
     padding: 10px;
@@ -272,6 +281,49 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 -webkit-appearance: none;
 margin: 0;
+}
+
+@media screen and (min-width: 420px) {
+    .title {
+        font-size: 16pt;
+        margin: 2px;
+        display: inline-block;
+        padding: 10px;
+        background-color: transparent;
+        color: black;
+        border-radius: 15px;
+        border: 3px solid black;
+    }
+
+    .section {
+        border-style: solid;
+        border-color: white;
+        border-radius: 1em;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
+        overflow: auto;
+        font-size: 12pt;
+    }
+
+    .radioField {
+        margin: 2px;
+        display: inline-block;
+        padding: 10px;
+        background-color: black;
+        color: white;
+        border-radius: 15px;
+        /*border: 1px solid black;*/
+    }
+
+    .field {
+        margin: 0 auto;
+        display: inline-block;
+        font-size: initial;
+    }
+
+
 }
 
 @media screen and (min-width: 570px) {
