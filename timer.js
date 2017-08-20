@@ -104,7 +104,7 @@ function resizeFunction() {
     var min = document.getElementsByClassName("minField");
     var sec = document.getElementsByClassName("secField")
 
-    if (window.innerWidth <= 300) {
+    if (window.innerWidth <= 350) {
         min[0].innerHTML = "Min:"
         min[1].innerHTML = "Min:"
 
