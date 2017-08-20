@@ -100,6 +100,24 @@ function resizeFunction() {
 
         ctdwn.innerHTML = "Countdown to Start?";
     }
+
+    var min = document.getElementsByClassName("minField");
+    var sec = document.getElementsByClassName("secField")
+
+    if (window.innerWidth <= 300) {
+        min[0].innerHTML = "Min:"
+        min[1].innerHTML = "Min:"
+
+        sec[0].innerHTML = "Sec:"
+        sec[1].innerHTML = "Sec:"
+    }
+    else {
+        min[0].innerHTML = "Minutes:"
+        min[1].innerHTML = "Minutes:"
+
+        sec[0].innerHTML = "Seconds:"
+        sec[1].innerHTML = "Seconds:"
+    }
 }
 
 
