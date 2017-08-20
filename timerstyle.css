@@ -9,7 +9,7 @@ body {
 * {
     word-wrap: break-word;
     font-family: 'Varela Round', sans-serif;
-    outline: none;
+    /*outline: none;*/
 }
 #bodyContainer {
     /*width: 400px;*/
@@ -295,6 +295,9 @@ select {
     /*border: none;*/
     outline: none;
     font-size: 10vw;
+
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 input::-webkit-outer-spin-button,
@@ -332,9 +335,12 @@ margin: 0;
         display: inline-block;
     }
 
-#timerButton {
-    font-size: 12vw;
-}
+    #timerButton {
+        font-size: 12vw;
+
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: black;
+    }
 
 /*    .minField, .secField {
         font-size: 14pt;
@@ -371,6 +377,11 @@ margin: 0;
 
     #totalTimeLeft {
         font-size: 4vw;
+    }
+
+    #timerButton {
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: black;
     }
 }
 
