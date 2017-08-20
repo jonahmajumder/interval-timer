@@ -222,7 +222,7 @@ function cleanAdder() {
 }
 
 
-function addInterval(){
+function addInterval() {
     cleanAdder();
 
     workout = fullWorkout.slice(0);
@@ -443,7 +443,7 @@ function getWorkout() {
             newWorkout.push(int);
             i++;
         }
-        console.log(newWorkout);
+        // console.log(newWorkout);
         countdownSec = parseInt(sessionStorage.countdownSec);
         var sum = countdownSec;
         for (var i = 0; i < newWorkout.length; i++) {
@@ -463,6 +463,7 @@ function getWorkout() {
         }
     }
     catch (TypeError) {
+        document.getElementById("totalTimeLeft").innerHTML = "No Workout!";
         swal({
             title: "No Workout!",
             text: "Please begin by creating or loading a workout.",
@@ -599,7 +600,7 @@ function startTimer() {
             }
             secRemaining = secondCounter - (initialSC - countdownSec);
             onScreenString = secRemaining.toString();
-            playCountdown();
+            countdownSound.play();
         }
         else { // execute if secondCounter is lower than first interval start time (i.e. actual workout has begun)
 
@@ -623,12 +624,8 @@ function startTimer() {
                 secRemaining = secondCounter - (initialSC - newWorkout[iInt][0]);
                 onScreenString = sec2time(secRemaining);
 
-                if (iInt < newWorkout.length - 1) {
-                    if (newWorkout[iInt+1][1] == 1) {
-                        if ((secRemaining < 4) && (secRemaining > 0)) {
-                            playCountdown();
-                        }
-                    }
+                if ((secRemaining < 4) && (secRemaining > 0)) {
+                    countdownSound.play();
                 }
             }
 
@@ -662,22 +659,15 @@ function startTimer() {
 }
 
 function activeIntervalStart() {
-    var startSound = new Audio("audio/start.mp3");
     startSound.play();
 
     return "Go!";
 }
 
 function restIntervalStart() {
-    var doneSound = new Audio("audio/done.mp3");
     doneSound.play();
 
     return "Rest!";
-}
-
-function playCountdown() {
-    var ctdwnSound = new Audio("audio/countdown.mp3");
-    ctdwnSound.play();
 }
 
 function workoutFinished() {
@@ -697,7 +687,6 @@ function workoutFinished() {
 
     timerButton.innerHTML = "Finished!";
 
-    var clapSound = new Audio("audio/claps.mp3");
     clapSound.play();
 }
 

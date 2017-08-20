@@ -232,11 +232,11 @@ body {
 }
 
 #adder select {
-    width: 30px;
+    width: 35px;
     height: 25px;
     outline: none;
     font-size: 12pt;
-    vertical-align: center;
+    vertical-align: middle;
 
     background-color: white;
     
@@ -294,7 +294,7 @@ select {
     border-radius: 15px;
     /*border: none;*/
     outline: none;
-    font-size: 12vw;
+    font-size: 10vw;
 }
 
 input::-webkit-outer-spin-button,
@@ -331,6 +331,10 @@ margin: 0;
         margin: 0 auto;
         display: inline-block;
     }
+
+#timerButton {
+    font-size: 12vw;
+}
 
 /*    .minField, .secField {
         font-size: 14pt;

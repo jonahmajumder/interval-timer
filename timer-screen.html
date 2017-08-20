@@ -2,17 +2,26 @@
 <html>
 <head>
     <title>Timer Screen</title>
+    <link rel="icon" href="indexicon.ico">
     <meta name="viewport" content="initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="timerstyle.css" />
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <script type="text/javascript" src="timer.js"></script>
-
     <script type="text/javascript">
+        var countdownSound;
+        var startSound;
+        var doneSound;
+        var clapSound;
         window.onload = function() {
             started = 0;
             isPaused = 0;
             getWorkout();
             resizeTimer();
+
+            countdownSound = document.getElementById("countdownSound");
+            startSound = document.getElementById("startSound");
+            doneSound = document.getElementById("doneSound");
+            clapSound = document.getElementById("clapSound");
         }
         window.onresize = debounce(resizeTimer, 10);
     </script>
@@ -39,11 +48,18 @@
         </script>
         <div id="buttonContainer">
             <button id="timerButton" onclick="timerButtonPress();">Click to start!</button>
-            <!-- <audio>
-                <source id="countdownSound" src="audio/countdown.mp3" type="audio/mpeg">
-                <source id="startSound" src="audio/start.mp3" type="audio/mpeg">
-                <source id="doneSound" src="audio/done.mp3" type="audio/mpeg">
-            </audio> -->
+            <audio id="countdownSound" preload="auto">
+                <source src="audio/countdown.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="startSound" preload="auto">
+                <source src="audio/start.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="doneSound" preload="auto">
+                <source src="audio/done.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="clapSound" preload="auto">
+                <source src="audio/claps.mp3" type="audio/mpeg">
+            </audio>
         </div>
         <div class="section">
             <button class="actionButton" onclick="backToAdder();">Go Back</button>
