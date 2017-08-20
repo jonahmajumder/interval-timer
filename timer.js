@@ -21,10 +21,12 @@ var workoutName;
 var savedWorkouts = {
     "8 1-Minute Intervals": [[60,1], [60,0], [60,1], [60,0], [60,1], [60,0], [60,1], [60,0], [60,1], [60,0], [60,1], [60,0], [60,1], [60,0], [60,1], [60,0]],
     "45 on, 15 off (4 min)": [[45,1], [15, 0], [45,1], [15, 0], [45,1], [15, 0], [45,1], [15, 0]],
+    "Eight Minute Abs": [[45,1],[45,1],[45,1],[45,1],[45,1],[45,1],[45,1],[45,1],[45,1],[45,1],[30,1]],
 };
 var savedWorkoutNames = {
     "8 1-Minute Intervals": "8 1-Minute Intervals",
     "45 on, 15 off (4 min)": "45 on, 15 off (4 min)",
+    "Eight Minute Abs": "Eight Minute Abs",
 };
 
 // -------- in timer ---------
