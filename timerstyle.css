@@ -221,23 +221,23 @@ body {
     padding: 5px 0;
 }
 
-.timeInput {
-    width: 30px;
-    font-size: 10pt;
-}
-
-.restTimeInput {
-    width: 30px;
-    font-size: 10pt;
-}
-
 [type="radio"] {
     margin: 0 5px 0 0;
 }
 
-[type="number"] {
+#adder select {
     width: 20px;
+    height: 20px;
+    outline: none;
+    font-size: 10pt;
+    
+    text-align-last:center;
+
+    -webkit-appearance: none;
 }
+
+#adder select::-ms-expand {    display: none; }
+
 
 #finalRestCheck {
     font-size: 12px;

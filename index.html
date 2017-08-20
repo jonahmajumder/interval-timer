@@ -13,21 +13,9 @@
     <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
     <script type="text/javascript">
         window.onload = function() {
-            var inp;
-            var timeInputs = document.getElementsByClassName("timeInput");
-            for (var i = 0; i < timeInputs.length; i++) {
-                inp = timeInputs[i];
-                inp.min = 0;
-                inp.max = 59;
-            }
-            timeInputs = document.getElementsByClassName("RestTimeInput");
-            for (var i = 0; i < timeInputs.length; i++) {
-                inp = timeInputs[i];
-                inp.min = 0;
-                inp.max = 59;
-            }
             assessRest(0);
             undoAdd();
+            renderNumberInputs();
             resizeFunction();
         }
         window.onresize = debounce(resizeFunction, 10);
@@ -62,13 +50,13 @@
                         <div class="radioField">
                         <div class="field">Minutes:</div>
                         <div class="field">
-                            <input id="activeMin" type="number" name="minutes" class="timeInput" value=0>
+                            <select id="activeMin" class="timeInput"></select>
                         </div>
                         </div>
                         <div class="radioField">
                         <div class="field">Seconds:</div>
                         <div class="field">
-                            <input id="activeSec" type="number" name="seconds" class="timeInput" value=0>
+                            <select id="activeSec" class="timeInput"></select>
                         </div>
                         </div>
                     </div>
@@ -82,13 +70,13 @@
                         <div id="restMinBox" class="disabledField">
                         <div id="restMinLabel" class="field">Minutes:</div>
                         <div class="field">
-                            <input id="restMin" type="number" name="minutes" class="restTimeInput" value=0 disabled="true">
+                            <select id="restMin" disabled="true" class="restTimeInput"></select>
                         </div>
                         </div>
                         <div id="restSecBox" class="disabledField">
                         <div id="restSecLabel" class="field">Seconds:</div>
                         <div class="field">
-                            <input id="restSec" type="number" name="seconds" class="restTimeInput" value=0 disabled="true">
+                            <select id="restSec" disabled="true" class="restTimeInput"></select>
                         </div>
                         </div>
                     </div>
@@ -96,7 +84,7 @@
                         <div class="radioField">
                             <div class="field">How many intervals?</div>
                             <div class="field">
-                                <input id="addRepetitions" class="timeInput" value=1 type="number" name="nInt" min=1 style="width: 20px;">
+                                <select id="addRepetitions" class="timeInput"></select>
                             </div>
                         </div>
                     </div>

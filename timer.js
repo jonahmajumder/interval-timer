@@ -117,7 +117,22 @@ function resizeTimer() {
 
     timerButton.style.height = newHeight.toString() + "px";
 
+}
 
+function selectContentString(min, max) {
+    var selectHTML = '';
+    for (var i = min; i <= max; i++) {
+        selectHTML += '<option value="' + i + '">' + i + '</option>' + '\n';
+    }
+    return selectHTML;
+}
+
+function renderNumberInputs() {
+    document.getElementById("activeMin").innerHTML = selectContentString(0,60);
+    document.getElementById("restMin").innerHTML = selectContentString(0,60);
+    document.getElementById("activeSec").innerHTML = selectContentString(0,59);
+    document.getElementById("restSec").innerHTML = selectContentString(0,59);
+    document.getElementById("addRepetitions").innerHTML = selectContentString(1,99);
 }
 
 function assessRest(setting){
@@ -283,7 +298,7 @@ function updateSummary(){
         // lastIntDiv.style.cssText = "visibility: hidden;";
     }
     else if (excludeFinalRest) {
-        if (noFinalRest.length == 0) {
+        if ((noFinalRest.length == 0) && (fullWorkout.length != 0)) {
             if (fullWorkout.slice(-1)[0][1] == 0){
                 noFinalRest = workout.slice(0,-1);
             }
