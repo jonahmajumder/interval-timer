@@ -740,7 +740,7 @@ function green2redColorString(n) {
 
 
 function backToAdder() {
-    sweetAlert({title: "Are you sure?", text: "You will be forced to restart timer!", type: "warning",
+    sweetAlert({title: "Are you sure?", text: "You will be forced to reenter timer!", type: "warning",
         showCancelButton: true, confirmButtonColor: "#DD6B55", confirmButtonText: "Go Back", closeOnConfirm: false
     },
     function (){
