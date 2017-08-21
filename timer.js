@@ -78,6 +78,8 @@ function resizeFunction() {
 
     var ctdwn = document.getElementById("countdownButton");
 
+    var ctdwnLabel = document.getElementById("countdownLabel");
+
     if (window.innerWidth < 600) {
         saveButton.innerHTML = "Save";
         loadButton.innerHTML = "Load";
@@ -88,6 +90,7 @@ function resizeFunction() {
         none.innerHTML = "None";
 
         ctdwn.innerHTML = "Countdown?";
+        ctdwnLabel.innerHTML = "sec";
     }
     else {
         saveButton.innerHTML = "Save Workout";
@@ -99,6 +102,7 @@ function resizeFunction() {
         none.innerHTML = "No Rest";
 
         ctdwn.innerHTML = "Countdown to Start?";
+        ctdwnLabel.innerHTML = "seconds";
     }
 
     var min = document.getElementsByClassName("minField");
@@ -151,6 +155,7 @@ function renderNumberInputs() {
     document.getElementById("activeSec").innerHTML = selectContentString(0,59);
     document.getElementById("restSec").innerHTML = selectContentString(0,59);
     document.getElementById("addRepetitions").innerHTML = selectContentString(1,99);
+    document.getElementById("countdownSec").innerHTML = selectContentString(0,10);
 }
 
 function assessRest(setting){
@@ -586,7 +591,10 @@ function startTimer() {
         }
         // console.log(subIntervalCounter);
 
-        subIntervalCounter += 1;
+        if (!isPaused) {
+            subIntervalCounter += 1;
+        }
+        
     }
 
     function doEvent() {
@@ -750,6 +758,7 @@ function showPauseScreen() {
         buttonNum: 2,
         buttonColor: ["blue", "green"],
         buttonNames: ["Restart", "Resume"],
+        showCancelButton: false,
         clickFunctionList: [
             function () {
                 window.location.href = "timer-screen.html";

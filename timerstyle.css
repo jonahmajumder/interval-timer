@@ -245,6 +245,23 @@ body {
     -webkit-appearance: none;
 }
 
+#countdownSec {
+    width: 35px;
+    height: 25px;
+    outline: none;
+    font-size: 12pt;
+
+    margin: 0 3px 0 0;
+
+    vertical-align: middle;
+
+    background-color: white;
+    
+    text-align-last:center;
+
+    -webkit-appearance: none;
+}
+
 select {
     outline: none;
 }

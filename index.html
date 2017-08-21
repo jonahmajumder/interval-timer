@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="user-scalable=no, width=device-width" />
-    
+
     <link rel="stylesheet" type="text/css" href="timerstyle.css" />
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <script type="text/javascript" src="timer.js"></script>
@@ -100,7 +100,9 @@
                     <div class="subsection">
                         <button id="countdownButton" class="radioButton" onclick="assessCountdown();">Countdown to Start?</button>
                         <div id="countdownInputBox" class="disabledField">
-                            <input id="countdownSec" value=0 type="number" style="width: 20px;" disabled>
+                            <div class="field">
+                                <select id="countdownSec" class="timeInput" disabled></select>
+                            </div>
                             <div id="countdownLabel" class="field">seconds</div>
                         </div>
                     </div>
