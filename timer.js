@@ -158,18 +158,6 @@ function renderNumberInputs() {
     document.getElementById("countdownSec").innerHTML = selectContentString(1,10);
 }
 
-function startSounds() {
-    var
-
-    document
-    document
-    document
-    document
-
-
-    
-}
-
 function assessRest(setting){
     var restOps = document.getElementById("restOptions").children;
     restChoice = setting;
@@ -358,7 +346,7 @@ function updateSummary(){
     workoutSec = totalSec%60;
     workoutMin = (totalSec - workoutSec)/60;
 
-    var durationString = "Total Duration:<br>" + workoutMin + " minutes, " + workoutSec + " seconds";
+    var durationString = "Total Duration:<br>" + workoutMin + "&nbsp;minutes, " + workoutSec + "&nbsp;seconds";
     document.getElementById("innerDurationDiv").innerHTML = durationString;
 
     var bar = document.getElementById("summaryBar");
