@@ -155,7 +155,19 @@ function renderNumberInputs() {
     document.getElementById("activeSec").innerHTML = selectContentString(0,59);
     document.getElementById("restSec").innerHTML = selectContentString(0,59);
     document.getElementById("addRepetitions").innerHTML = selectContentString(1,99);
-    document.getElementById("countdownSec").innerHTML = selectContentString(0,10);
+    document.getElementById("countdownSec").innerHTML = selectContentString(1,10);
+}
+
+function startSounds() {
+    var
+
+    document
+    document
+    document
+    document
+
+
+    
 }
 
 function assessRest(setting){

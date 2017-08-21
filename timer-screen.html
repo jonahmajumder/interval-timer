@@ -22,9 +22,24 @@
             resizeTimer();
 
             countdownSound = document.getElementById("countdownSound");
+            countdownSound.play();
+            countdownSound.pause();
+            countdownSound.currentTime = 0;
+
             startSound = document.getElementById("startSound");
+            startSound.play();
+            startSound.pause();
+            startSound.currentTime = 0;
+
             doneSound = document.getElementById("doneSound");
+            doneSound.play();
+            doneSound.pause();
+            doneSound.currentTime = 0;
+
             clapSound = document.getElementById("clapSound");
+            clapSound.play();
+            clapSound.pause();
+            clapSound.currentTime = 0;
         }
         window.onresize = debounce(resizeTimer, 10);
     </script>
@@ -63,6 +78,7 @@
             <audio id="clapSound" preload="auto">
                 <source src="audio/claps.mp3" type="audio/mpeg">
             </audio>
+
         </div>
         <div class="section">
             <button class="actionButton" onclick="backToAdder();">Go Back</button>
